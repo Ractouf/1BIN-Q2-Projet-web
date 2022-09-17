@@ -1,0 +1,13 @@
+/*FOOTER*/
+footer {
+    border-top: 1px solid #0000001F;
+    margin-inline: 10vw;
+    margin-top: 4rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+footer p {
+    color: #6c757d;
+}
+/*END FOOTER*/

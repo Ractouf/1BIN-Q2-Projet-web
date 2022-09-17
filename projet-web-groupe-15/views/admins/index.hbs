@@ -1,0 +1,48 @@
+<section id = "admin">
+    <h1>Admin panel</h1>
+
+    <section id = "reportedItems">
+        <section>
+            <h2>Reported Questions</h2>
+            {{#each reportedQuestion}}
+                <section class = "reportedItem">
+                    <h3>{{this.title_question}}</h3>
+                    <p>{{this.subject_question}}</p>
+
+                    <section class = "acceptDeny">
+                        <form method = "post" action = "/admins/report/question/accept">
+                            <input type = "hidden" name = "questionId" value = "{{this.id_question}}"/>
+                            <input type = "submit" value = "delete" onclick = "adminDeleteQuestion(event)"/>
+                        </form>
+
+                        <form method = "post" action = "/admins/report/question/decline">
+                            <input type = "hidden" name = "questionId" value = "{{this.id_question}}"/>
+                            <input type = "submit" value = "keep" onclick = "adminKeepQuestion(event)"/>
+                        </form>
+                    </section>
+                </section>
+            {{/each}}
+        </section>
+
+        <section>
+            <h2>Reported Answers</h2>
+            {{#each reportedAnswer}}
+                <section class = "reportedItem">
+                    <p>{{this.subject_answer}}</p>
+
+                    <section class = "acceptDeny">
+                        <form method = "post" action = "/admins/report/answer/accept">
+                            <input type = "hidden" name = "answerId" value = "{{this.id_answer}}"/>
+                            <input type = "submit" value = "delete" onclick = "adminDeleteAnswer(event)"/>
+                        </form>
+
+                        <form method = "post" action = "/admins/report/answer/decline">
+                            <input type = "hidden" name = "answerId" value = "{{this.id_answer}}"/>
+                            <input type = "submit" value = "keep"  onclick = "adminKeepAnswer(event)"/>
+                        </form>
+                    </section>
+                </section>
+            {{/each}}
+        </section>
+    </section>
+</section>

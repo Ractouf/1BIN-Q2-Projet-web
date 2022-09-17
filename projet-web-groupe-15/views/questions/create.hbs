@@ -1,0 +1,25 @@
+<section id = "createQuestion">
+    <h1>Ask your question here below ! </h1>
+
+    <form id = "formCreate" method = "post" action = "/questions/add">
+        <p class = "msgErr">{{error}}</p>
+        <p id = "terms">Please be respectfull and clear ! </p>
+
+        <section>
+            <label for = "titleQuestion"></label>
+            <input type = "text" placeholder = "Title of my question" name = "titleQuestion" id = "titleQuestion" required>
+
+            <label for = "categoryQuestion"></label>
+            <select name = "categoryQuestion" id = "categoryQuestion" required>
+                {{#each category}}
+                    <option value = "{{this.id_category}}">{{this.name_category}}</option>
+                {{/each}}
+            </select>
+        </section>
+
+        <label for = "subjectQuestion"></label>
+        <textarea name = "subjectQuestion" id = "subjectQuestion" placeholder = "Subject ..." required></textarea>
+
+        <input type = "submit" value = "Post my question">
+    </form>
+</section>

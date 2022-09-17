@@ -1,0 +1,33 @@
+#errorPage {
+    text-align: center;
+    margin-inline: 15vw;
+}
+#errorPage section {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+#errorPage h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+#errorPage p {
+    color: gray;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ced4da;
+}
+#errorPage pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+#errorPage a {
+    color: #fff;
+    background-color: #0d6efd;
+    padding: .400rem .75rem;
+    border-radius: .25rem;
+    transition: .15s;
+}
+#errorPage a:hover {
+    background-color: #0a58caff;
+}

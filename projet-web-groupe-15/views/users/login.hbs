@@ -1,0 +1,21 @@
+<section id = "loginPage">
+    <section class = "fade-in" id = "left-login">
+        <h1>Welcome back to the dev community !</h1>
+        <p>Subscribe to our newspaper to get notified about all our updates !</p>
+    </section>
+
+    <form id = "formLogin" method = "post" action = "/users/login" class = "fade-in from-right">
+        <p class = "msgErr">{{error}}</p>
+
+        <label for = "emailLogin"></label>
+        <input type = "email" name = "email" id = "emailLogin" placeholder = "name@example.com" required>
+
+        <label for = "passwordLogin"></label>
+        <input type = "password" name = "password" id = "passwordLogin" placeholder = "Password" required>
+
+
+        <input type = "submit" value = "Login"/>
+
+        <small>TODO !!</small>
+    </form>
+</section>

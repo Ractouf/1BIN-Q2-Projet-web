@@ -1,0 +1,50 @@
+<header>
+    <a class = "logo" href = "/">
+        <img src = "/images/logo.png" alt = "logo">
+    </a>
+
+    <p id = "slogan">Boost your development</p>
+
+    <form id = "formSearch" method = "get" action = "/search#questions">
+        <label>
+            <input type = "search" placeholder = "Search..." name = "searchTitle" value = "{{lastSearch}}">
+        </label>
+
+        <label id = "formCategories">
+            <select onchange = "this.form.submit()" name = "categorySearch">
+                <option value = "Category" selected>Category</option>
+                {{#each category}}
+                    <option {{#if (eq ../lastSearchCategory this.name_category)}}selected{{/if}} value = "{{this.id_category}}">{{this.name_category}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </form>
+
+    <section id = "headerButtons">
+        {{#if loggedIn}}
+            <a href = "/questions/add">Ask your question</a>
+        {{else}}
+            <a id = "login" href = "/users">Log in</a>
+            <a href = "/users/register">Sign-up</a>
+        {{/if}}
+    </section>
+
+    {{#if loggedIn}}
+        <section class = "dropdown">
+            <nav>
+                <img src = "/images/person.png" alt = "icon" tabindex="0">
+                <ul>
+                    <li><a href = "/members">Profile</a></li>
+                    {{#if loggedIn.is_admin}}
+                        <li><a href = "/admins">Admin</a></li>
+                    {{/if}}
+                    <li id = "signout">
+                        <form method = "post" action = "/users/signout">
+                            <button type = "submit">Sign out</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    {{/if}}
+</header>

@@ -1,0 +1,42 @@
+<section id = "mainPageTop">
+    <h1 class = "fade-in">Hello World !</h1>
+    <p class = "fade-in">
+        Welcome to a supportive and resourceful community, where you can ask your questions and be sure to get many answers. <br>
+        We are the dev community !  <br>
+        What are you waiting for ? Join us !
+    </p>
+
+    <ul>
+        <li class = "fade-in"><a href = "#questions" id = "recent">Recent questions</a></li>
+        <li class = "fade-in"><a href = "/questions/random" id = "random">Random question</a></li>
+    </ul>
+
+    <img id = "code" src="/images/code.png" alt = "code"/>
+</section>
+
+<section id = "questions">
+    {{#each question}}
+        <a class = "fade-in" href = "/questions?questionId={{this.id_question}}">
+            <p>{{this.title_question}}</p>
+
+            <section class = "question_bottom">
+                <section class = "question_buttons">
+                    <button>View</button>
+
+                    {{#if ../loggedIn}}
+                        <form method = "post" action = "/questions/reportMainPage">
+                            <input name = "id_question" type = "hidden" value = "{{this.id_question}}">
+                            <input type =  "submit" name = "report_question" value = "report" onclick = " reportQuestion(event)">
+                        </form>
+                    {{/if}}
+                </section>
+
+                {{#if this.is_solved}}
+                    <small>solved</small>
+                {{else}}
+                    <small>open</small>
+                {{/if}}
+            </section>
+        </a>
+    {{/each}}
+</section>

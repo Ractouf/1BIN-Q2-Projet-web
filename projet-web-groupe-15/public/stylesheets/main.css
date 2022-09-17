@@ -1,0 +1,101 @@
+/*MAIN TOP*/
+#mainPageTop {
+    text-align: center;
+    margin-top: 6rem;
+}
+#mainPageTop h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+#mainPageTop p {
+    margin: auto auto 2rem auto;
+    width: 50vw;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+#mainPageTop ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+#mainPageTop a {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.2rem;
+    background: #0d6efd;
+    color: white;
+    transition: .15s;
+}
+#random {
+    border: 1px solid #6c757d !important;
+    background: white !important;
+    color: #6c757d !important;
+}
+#random:hover {
+    background: #6c757d !important;
+    color: white !important;
+}
+#code {
+    border-radius: 0.2rem;
+    margin-bottom: 6rem;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    width: 50vw;
+}
+/*END MAIN TOP*/
+
+/*MAIN QUESTIONS*/
+#questions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    margin-inline: 10vw;
+    grid-gap: 1rem;
+}
+#questions p{
+    color: #0d6efd;
+    margin-bottom: .5rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+#questions a {
+    border: 1px solid #0000001F;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.175);
+}
+.question_buttons {
+    display: flex;
+    border: 1px solid #6c757d;
+    border-radius: .2rem;
+}
+.question_buttons input {
+    border-left: 1px solid #6c757d !important;
+}
+.question_buttons button, .question_buttons input {
+    border: none;
+    background-color: white;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    color: #6c757d;
+    transition: .15s;
+}
+.question_buttons input:hover {
+    background-color: red !important;
+}
+.question_buttons button:hover, .question_buttons input:hover {
+    background: #6c757d;
+    color: white;
+}
+.question_bottom {
+    display: flex;
+    margin-top: auto;
+}
+.question_bottom small {
+    margin-block: auto;
+    margin-left: auto;
+    font-size: .875rem;
+    color: #6c757d;
+}
+/*END MAIN QUESTIONS*/

@@ -1,0 +1,113 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    margin-inline: 10vw;
+}
+.logo {
+    margin-right: 1.5rem;
+}
+.logo img {
+    width: 150px;
+    height: 50px;
+}
+#slogan {
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+}
+#formSearch {
+    display: flex;
+    gap: 1rem;
+    margin-right: auto;
+}
+#formSearch input, #formSearch select {
+    padding: .375rem .75rem;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+#headerButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+#headerButtons a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #0d6efd;
+    padding: .400rem .75rem;
+    border-radius: .25rem;
+    transition: .15s;
+}
+
+#login {
+    background: white !important;
+    color: #0d6efd !important;
+    border: 1px solid #0d6efd;
+    border-radius: .25rem;
+}
+#login:hover {
+    background: #0d6efd !important;
+    color: white !important;
+}
+#headerButtons a:hover, #recent:hover {
+    background-color: #0a58caff;
+}
+
+/*DROPDOWN*/
+.dropdown img {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    width: 30px;
+    transition: 0.15s;
+}
+nav img:hover + ul, nav ul:hover, nav img:focus + ul{
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #0000001F;
+    border-radius: 0.2rem;
+    position: absolute;
+    list-style-type: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.15s;
+}
+nav a, nav button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .2rem;
+    padding: .375rem .75rem;
+    text-decoration: none;
+    transition:.15s;
+}
+nav button {
+    background-color: white;
+    border: none;
+}
+nav li {
+    box-sizing: border-box;
+    width: 100%;
+}
+nav a:hover, nav button:hover {
+    background-color: #0000001F;
+}
+#signout {
+    border-top: 1px solid #0000001F !important;
+}
+/*END DROPDOWN*/

@@ -1,0 +1,23 @@
+<section id = "member">
+    <h1>Welcome, {{loggedIn.firstname}} !</h1>
+
+    <section id = "questionsUser">
+        <section id = "questionsUserUnsolved">
+            <h2>My unsolved questions - &#x2753;</h2>
+            {{#each questionsUnsolved}}
+                <a href = "/questions?questionId={{this.id_question}}">
+                    <h3>{{this.title_question}}</h3>
+                </a>
+            {{/each}}
+        </section>
+
+        <section id = "questionsUserSolved">
+            <h2>My solved questions - &#9989;</h2>
+            {{#each questionSolved}}
+                <a href = "/questions?questionId={{this.id_question}}">
+                    <h3>{{this.title_question}}</h3>
+                </a>
+            {{/each}}
+        </section>
+    </section>
+</section>

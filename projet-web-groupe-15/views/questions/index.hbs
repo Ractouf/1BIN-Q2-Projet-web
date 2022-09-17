@@ -1,0 +1,65 @@
+<section id = "questionPage">
+    <section id = "question">
+        <h1>{{question.title_question}}</h1>
+
+        <p id = "info_question">
+            Category: {{category_question.name_category}}, by {{user_of_question.firstname}} {{user_of_question.lastname}} - {{question.question_date}}
+        </p>
+
+        <p id = "subjectQuestion">{{question.subject_question}}</p>
+
+        {{#if loggedIn}}
+            {{#unless question_belong_user}}
+                <form method = "post" action = "/questions/report">
+                    <input type = "submit" name = "report_question" value = "report" onclick = "reportQuestion(event)">
+                </form>
+            {{/unless}}
+        {{/if}}
+    </section>
+
+    <section id = "listAnswers">
+        {{#each answer}}
+            <section class = "answer">
+
+                <p class = "infoAnswer">
+                    {{owner_of_answer.firstname}} {{owner_of_answer.lastname}} - {{date_answer}} {{#if is_right_answer}} - &#9989;{{/if}}
+                </p>
+
+                <p class = "subjectAnswer">{{subject_answer}}</p>
+
+                {{#if ../loggedIn}}
+                    <section class = "answerButtons">
+                        {{#if (ne owner_of_answer.id_user ../loggedIn.id_user)}}
+                            <form method = "post" action = "/questions/answers/report">
+                                <input type = "hidden" name = "answerId" value="{{this.id_answer}}"/>
+                                <input type = "submit" name = "report_answer" value="report" class = "button_report"  onclick = "reportAnswer(event)"/>
+                            </form>
+                        {{/if}}
+
+                        {{#unless ../question.is_solved}}
+                            {{#if ../question_belong_user}}
+                                <form method = "post" action = "/questions/answers/validate">
+                                        <input type = "hidden" name = "answerId" value = "{{this.id_answer}}" />
+                                        <input type = "submit" name = "right_answer" value = "Right answer" class = "right_answer_button" onclick = "rightAnswer(event)"/>
+                                </form>
+                            {{/if}}
+                        {{/unless}}
+                    </section>
+                {{/if}}
+            </section>
+        {{/each}}
+    </section>
+
+    {{#if loggedIn}}
+        {{#unless question.is_solved}}
+            <form id = "formNewAnswer" method = "post" action = "/questions/answers/add">
+                <p class = "msgErr">{{error}}</p>
+                <h2>Your answer</h2>
+                <label for = "user_answer"></label>
+                <textarea placeholder = "You can do this..." name = "user_answer" id = "user_answer"></textarea>
+
+                <input type = "submit" value = "Send">
+            </form>
+        {{/unless}}
+    {{/if}}
+</section>

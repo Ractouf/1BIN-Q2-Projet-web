@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang = "fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Adopt a dev</title>
+        <link href = "/images/favicon.ico" rel = "icon"/>
+        <link rel = 'stylesheet' href = '/stylesheets/style.css'/>
+        <link rel = 'stylesheet' href = '/stylesheets/header.css'/>
+        <link rel = 'stylesheet' href = '/stylesheets/footer.css'/>
+        <link rel = 'stylesheet' href = '/stylesheets/loginRegister.css'/>
+        <link rel = 'stylesheet' href = '/stylesheets/main.css'/>
+        <link rel = 'stylesheet' href = '/stylesheets/question.css'/>
+        <link rel = 'stylesheet' href = '/stylesheets/memberAdmin.css'/>
+        <link rel = 'stylesheet' href = '/stylesheets/error.css'/>
+    </head>
+
+    <body>
+        {{>header}}
+        {{{body}}}
+        {{>footer}}
+
+        <script src = "/scripts/observers.js"></script>
+        <script>
+            function reportQuestion(e) {
+                if (!confirm('Are you sure to report this question ?')) {
+                    e.preventDefault();
+                }
+            }
+            function reportAnswer(e) {
+                if (!confirm("Are you sure to report this answer ?")) {
+                    e.preventDefault();
+                }
+            }
+            function rightAnswer(e) {
+                if (!confirm("Are you sure this is the right answer ?")) {
+                    e.preventDefault();
+                }
+            }
+            function adminKeepQuestion(e) {
+                if (!confirm("Are you sure to keep the question ?")) {
+                    e.preventDefault();
+                }
+            }
+            function adminDeleteQuestion(e) {
+                if (!confirm("Are you sure to delete the question?")) {
+                    e.preventDefault();
+                }
+            }
+            function adminKeepAnswer(e) {
+                if (!confirm("Are you sure to keep the answer ?")) {
+                    e.preventDefault();
+                }
+            }
+            function adminDeleteAnswer(e) {
+                if (!confirm("Are you sure to delete the answer ?")) {
+                    e.preventDefault();
+                }
+            }
+        </script>
+    </body>
+</html>

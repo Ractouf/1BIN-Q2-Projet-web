@@ -1,0 +1,59 @@
+#member {
+    margin-inline: 20vw;
+}
+#admin {
+    margin-inline: 15vw;
+}
+#member h1, #admin h1 {
+    margin-block: 3rem;
+    text-align: center;
+    font-size: 2rem;
+}
+#questionsUser, #reportedItems {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 100;
+}
+#questionsUser h2, #reportedItems h2 {
+    margin-block: 2rem;
+}
+#questionsUser a h3 {
+    margin-block: .5rem;
+    font-weight: normal;
+    border: 1px solid #0000001F;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.175);
+}
+.reportedItem {
+    border: 1px solid #0000001F;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.175);
+    max-width: 500px;
+    margin-block: 1rem;
+}
+.reportedItem h3, .reportedItem p {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.acceptDeny {
+    display: flex;
+    gap: 5px;
+}
+.acceptDeny input {
+    border: 1px solid #6c757d;
+    border-radius: .2rem;
+    background-color: white;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    color: #6c757d;
+    transition: .15s;
+}
+.acceptDeny input:hover {
+    background: #6c757d;
+    color: white;
+}
+.reportedItem p {
+    margin-bottom: 1rem;
+}
